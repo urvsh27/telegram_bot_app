@@ -50,7 +50,7 @@ export class TelegramBotService {
 
     private registerCommands() {
 
-    this.bot.onText(/\/start/,  (msg) => {
+    this.bot.onText(/\/start/, async (msg) => {
       const chatId = msg.chat.id;
       this.bot.sendMessage(chatId,'👉 Type \/subscribe to get daily weather updates every 3 hour in your telegram. \n 👉  Type \/unsubscribe to remove subscription.');
     });
@@ -88,7 +88,7 @@ export class TelegramBotService {
           this.subscribedUsers.delete(chatId);
           this.bot.sendMessage(chatId, 'You have been unregistered.');
         } else {
-          this.bot.sendMessage(chatId, 'un-registration failed. Please try again.');
+          this.bot.sendMessage(chatId, 'unregistration failed. Please try again.');
         }
       } else {
         this.bot.sendMessage(chatId, 'You are not registered.');
