@@ -50,7 +50,7 @@ export class TelegramBotService {
 
     private registerCommands() {
 
-    this.bot.onText(/\/start/, async (msg) => {
+    this.bot.onText(/\/start/,  (msg) => {
       const chatId = msg.chat.id;
       this.bot.sendMessage(chatId,'👉 Type \/subscribe to get daily weather updates every 3 hour in your telegram. \n 👉  Type \/unsubscribe to remove subscription.');
     });
