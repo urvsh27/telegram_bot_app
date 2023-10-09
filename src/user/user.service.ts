@@ -10,18 +10,18 @@ export class UserService {
 
   async createUser(chatId: number, username: string): Promise<User> {
     const user = new this.userModel({ chatId, username });
-    return user.save();
+    return await user.save();
   }
 
   async deleteUser(chatId: number): Promise<User | null> {
-    return this.userModel.findOneAndDelete({ chatId }).exec();
+    return await this.userModel.findOneAndDelete({ chatId }).exec();
   }
 
   async getUsers(): Promise<User[]> {
-    return this.userModel.find().exec();
+    return await this.userModel.find().exec();
   }
 
   async getUserByChatId(chatId: number): Promise<User | null> {
-    return this.userModel.findOne({ chatId }).exec();
+    return await this.userModel.findOne({ chatId }).exec();
   }
 }

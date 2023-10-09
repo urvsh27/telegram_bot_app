@@ -88,7 +88,7 @@ export class TelegramBotService {
           this.subscribedUsers.delete(chatId);
           this.bot.sendMessage(chatId, 'You have been unregistered.');
         } else {
-          this.bot.sendMessage(chatId, 'Unregistration failed. Please try again.');
+          this.bot.sendMessage(chatId, 'un-registration failed. Please try again.');
         }
       } else {
         this.bot.sendMessage(chatId, 'You are not registered.');
